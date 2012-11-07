@@ -1,9 +1,9 @@
 *.pyc
 *~
 *.swp
-_site
-_templates/
-css/
-themes/
-js/
-img/
+/_site
+/_templates/
+/css/
+/themes/
+/js/
+/img/
