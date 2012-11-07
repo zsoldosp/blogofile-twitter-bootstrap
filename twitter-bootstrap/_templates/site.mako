@@ -70,12 +70,7 @@ ${self.header()}
 
     ${self.footer()}
     </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="${bf.util.site_path_helper('js/jquery.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap.min.js')}"></script>
+    ${self.body_scripts()}
   </body>
 </html>
 <%def name="head()"><%include file="head.mako" /></%def>
