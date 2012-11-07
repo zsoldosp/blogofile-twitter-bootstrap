@@ -1,0 +1,6 @@
+*.pyc
+*~
+*.swp
+_site
+_templates/*.mako
+_templates/blog/
