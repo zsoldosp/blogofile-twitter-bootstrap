@@ -3,10 +3,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>${bf.config.blog.name}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="${bf.config.blog.description}">
+%if bf.config.site.author:
+    <meta name="author" content="${bf.config.site.author}">
+%endif
 
     <!-- Le styles -->
     <link href="${bf.util.site_path_helper('css/bootstrap.css')}" rel="stylesheet">
@@ -20,11 +22,13 @@
       }
     </style>
     <link href="${bf.util.site_path_helper('css/bootstrap-responsive.css')}" rel="stylesheet">
+    <link rel="stylesheet" href="${bf.util.site_path_helper(bf.config.filters.syntax_highlight.css_dir,'/pygments_'+bf.config.filters.syntax_highlight.style+'.css')}" type="text/css" />
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <%include file="theme.mako"/>
 
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="${bf.util.site_path_helper('ico/favicon.ico')}">
