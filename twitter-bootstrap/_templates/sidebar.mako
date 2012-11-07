@@ -1,17 +1,11 @@
-<aside>
-  <section>
-    <h1 class="post_header_gradient theme_font">Latest Posts</h1>
-    <ul>
-      % for post in bf.config.blog.iter_posts_published(5):
-      <li><a href="${post.path}">${post.title}</a></li>
-      % endfor
-    </ul>
-  </section>
-  <section>
-    <h1 class="post_header_gradient theme_font">From Twitter "example"</h1>
-    <div id="on_twitter">
-      <div id="tweets"></div>
-      <a href="http://search.twitter.com/search?q=example" style="float: right">See more tweets</a>
-    </div>
-  </section>
-</aside>
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              % for post in bf.config.blog.iter_posts_published(5):
+              <!-- TODO: include link active here, just like in navmenu
+              <li class="active"><a href="#">Link</a></li>
+              -->
+              <li><a href="${post.path}">${post.title}</a></li>
+              % endfor
+            </ul>
+          </div><!--/.well -->
