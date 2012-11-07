@@ -8,5 +8,10 @@
 * if bf.config.blog.googleanlytics_id should also be included in an if statement, like disqus
 * update index.html text with regards to customization points
 * move the sidebar to the bottom (and maybe to the right like in the original blog template)
+* add pagination using http://twitter.github.com/bootstrap/components.html#pagination
+* might want to use breadcrums - http://twitter.github.com/bootstrap/components.html#breadcrumbs
+* http://twitter.github.com/bootstrap/components.html#thumbnails
+* ability to overwrite the title with current page's title - bug in old blog as well
+* get a proper title for the archive_index
 ---- smells ----
 blog, disqus, tweets, etc. are scattered all over the templates. This makes it very hard to change/extend any of the templates without fully rewriting it. Would be nice to have some similar extensibility mechanism as django has it (block, block.super)
