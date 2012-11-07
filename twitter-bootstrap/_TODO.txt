@@ -4,4 +4,4 @@
 * same for disqus
 * make sure we re-add google analytics
 * disable copying of twitter-bootstrap/blogofile-blog dirs to _site
-
+* default blog is missing the base.css
