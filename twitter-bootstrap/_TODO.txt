@@ -6,6 +6,6 @@
 * disable copying of twitter-bootstrap/blogofile-blog dirs to _site
 * default blog is missing the base.css
 * if bf.config.blog.googleanlytics_id should also be included in an if statement, like disqus
-
+* update index.html text with regards to customization points
 ---- smells ----
 blog, disqus, tweets, etc. are scattered all over the templates. This makes it very hard to change/extend any of the templates without fully rewriting it. Would be nice to have some similar extensibility mechanism as django has it (block, block.super)
