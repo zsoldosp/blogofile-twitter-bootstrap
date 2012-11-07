@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="${bf.util.site_path_helper('css/bootstrap.css')}" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -19,7 +19,7 @@
         padding: 9px 0;
       }
     </style>
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="${bf.util.site_path_helper('css/bootstrap-responsive.css')}" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -27,11 +27,11 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="${bf.util.site_path_helper('ico/favicon.ico')}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${bf.util.site_path_helper('ico/apple-touch-icon-144-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${bf.util.site_path_helper('ico/apple-touch-icon-114-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${bf.util.site_path_helper('ico/apple-touch-icon-72-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" href="${bf.util.site_path_helper('ico/apple-touch-icon-57-precomposed.png')}">
   </head>
 
   <body>
@@ -137,19 +137,19 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap-transition.js"></script>
-    <script src="/js/bootstrap-alert.js"></script>
-    <script src="/js/bootstrap-modal.js"></script>
-    <script src="/js/bootstrap-dropdown.js"></script>
-    <script src="/js/bootstrap-scrollspy.js"></script>
-    <script src="/js/bootstrap-tab.js"></script>
-    <script src="/js/bootstrap-tooltip.js"></script>
-    <script src="/js/bootstrap-popover.js"></script>
-    <script src="/js/bootstrap-button.js"></script>
-    <script src="/js/bootstrap-collapse.js"></script>
-    <script src="/js/bootstrap-carousel.js"></script>
-    <script src="/js/bootstrap-typeahead.js"></script>
+    <script src="${bf.util.site_path_helper('js/jquery.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-transition.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-alert.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-modal.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-dropdown.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-scrollspy.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-tab.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-tooltip.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-popover.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-button.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-collapse.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-carousel.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/bootstrap-typeahead.js')}"></script>
 
   </body>
 </html>
