@@ -87,19 +87,7 @@ ${self.header()}
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="${bf.util.site_path_helper('js/jquery.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-transition.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-alert.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-modal.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-dropdown.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-scrollspy.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-tab.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-tooltip.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-popover.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-button.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-collapse.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-carousel.js')}"></script>
-    <script src="${bf.util.site_path_helper('js/bootstrap-typeahead.js')}"></script>
-
+    <script src="${bf.util.site_path_helper('js/bootstrap.min.js')}"></script>
   </body>
 </html>
 <%def name="head()"><%include file="head.mako" /></%def>
