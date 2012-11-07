@@ -2,5 +2,8 @@
 *~
 *.swp
 _site
-_templates/*.mako
-_templates/blog/
+_templates/
+css/
+themes/
+js/
+img/
