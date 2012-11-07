@@ -20,17 +20,9 @@ ${self.header()}
               -->
               <li><a href="${post.path}">${post.title}</a></li>
               % endfor
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+              <li class="nav-header">From Twitter "example"</li>
+              <div id="tweets"></div>
+              <li><a href="http://search.twitter.com/search?q=example" style="float: right">See more tweets</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -90,6 +82,8 @@ ${self.header()}
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="${bf.util.site_path_helper('js/jquery.js')}"></script>
     <script src="${bf.util.site_path_helper('js/bootstrap.min.js')}"></script>
+    <script src="${bf.util.site_path_helper('js/jquery.tweet.js')}"></script>  
+    <script src="${bf.util.site_path_helper('js/site.js')}"></script>  
   </body>
 </html>
 <%def name="head()"><%include file="head.mako" /></%def>
