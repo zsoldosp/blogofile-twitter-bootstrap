@@ -1,0 +1,7 @@
+* add ico/* which is missing from the bootstrap thing
+* report feature request/patch to jquery.tweet.js https://raw.github.com/frozzare/jquery.tweet.js/master/dist/jquery.tweet.js
+* consolidate tweetbox into a single component, so we could just simply enable/disable it in the config
+* same for disqus
+* make sure we re-add google analytics
+* disable copying of twitter-bootstrap/blogofile-blog dirs to _site
+

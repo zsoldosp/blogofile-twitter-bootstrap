@@ -1,0 +1,100 @@
+diff --git a/twitter-bootstrap/_templates/site.mako b/twitter-bootstrap/_templates/site.mako
+index 2c2951e..e1b049a 100644
+--- a/twitter-bootstrap/_templates/site.mako
++++ b/twitter-bootstrap/_templates/site.mako
+@@ -12,7 +12,7 @@ ${self.header()}
+       <div class="row-fluid">
+         <div class="span3">
+           <div class="well sidebar-nav">
+-            <ul class="nav nav-list">
++            <ul class="nav nav-list" id="tweets">
+               <li class="nav-header">Latest Posts</li>
+               % for post in bf.config.blog.iter_posts_published(5):
+               <!-- TODO: include link active here, just like in navmenu
+@@ -20,9 +20,8 @@ ${self.header()}
+               -->
+               <li><a href="${post.path}">${post.title}</a></li>
+               % endfor
++            <ul class="nav nav-list" id="tweets">
+               <li class="nav-header">From Twitter "example"</li>
+-              <div id="tweets"></div>
+-              <li><a href="http://search.twitter.com/search?q=example" style="float: right">See more tweets</a></li>
+             </ul>
+           </div><!--/.well -->
+         </div><!--/span-->
+@@ -82,7 +81,7 @@ ${self.header()}
+     <!-- Placed at the end of the document so the pages load faster -->
+     <script src="${bf.util.site_path_helper('js/jquery.js')}"></script>
+     <script src="${bf.util.site_path_helper('js/bootstrap.min.js')}"></script>
+-    <script src="${bf.util.site_path_helper('js/jquery.tweet.js')}"></script>  
++    <script src="${bf.util.site_path_helper('js/jquery.tweet.js?v=1')}"></script>  
+     <script src="${bf.util.site_path_helper('js/site.js')}"></script>  
+   </body>
+ </html>
+diff --git a/twitter-bootstrap/js/jquery.tweet.js b/twitter-bootstrap/js/jquery.tweet.js
+index 1aab5fa..39fa934 100644
+--- a/twitter-bootstrap/js/jquery.tweet.js
++++ b/twitter-bootstrap/js/jquery.tweet.js
+@@ -112,10 +112,20 @@
+ 
+     if(o) $.extend(s, o);
+     return this.each(function(){
+-      var list = $('<ul class="tweet_list">').appendTo(this);
+-      var intro = '<p class="tweet_intro">'+s.intro_text+'</p>'
+-      var outro = '<p class="tweet_outro">'+s.outro_text+'</p>'
+-      var loading = $('<p class="loading">'+s.loading_text+'</p>');
++      var list, inoutro_tag, before_fn, after_fn;
++      if (s.list == false) {
++        list = $('<ul class="tweet_list">').appendTo(this);
++        inoutro_tag = 'p';
++        before_fn = list.before
++        after_fn = list.after
++      } else {
++        list = $(this);
++        inoutro_tag = 'li';
++        before_fn = after_fn = list.append
++      }
++      var intro = '<' + inoutro_tag + ' class="tweet_intro">'+s.intro_text+'</' + inoutro_tag + '>'
++      var outro = '<' + inoutro_tag + ' class="tweet_outro">'+s.outro_text+'</' + inoutro_tag + '>'
++      var loading = $('<'+ inoutro_tag + ' class="loading">'+s.loading_text+'</'+ inoutro_tag + '>');
+       if(typeof(s.username) == "string"){
+         s.username = [s.username];
+       }
+@@ -125,10 +135,10 @@
+       }
+       query += '&q=from:'+s.username.join('%20OR%20from:');
+       var url = 'http://search.twitter.com/search.json?&'+query+'&rpp='+s.count+'&callback=?';
+-      if (s.loading_text) $(this).append(loading);
++      if (s.loading_text) list.append(loading);
+       $.getJSON(url, function(data){
+         if (s.loading_text) loading.remove();
+-        if (s.intro_text) list.before(intro);
++        if (s.intro_text) before_fn(intro);
+         $.each(data.results, function(i,item){
+           // auto join text based on verb tense and content
+           if (s.join_text == "auto") {
+@@ -161,7 +171,7 @@
+           list.children('li:odd').addClass('tweet_even');
+           list.children('li:even').addClass('tweet_odd');
+         });
+-        if (s.outro_text) list.after(outro);
++        if (s.outro_text) after_fn(outro);
+       });
+ 
+     });
+diff --git a/twitter-bootstrap/js/site.js b/twitter-bootstrap/js/site.js
+index 3133ae6..241dad0 100644
+--- a/twitter-bootstrap/js/site.js
++++ b/twitter-bootstrap/js/site.js
+@@ -2,8 +2,10 @@ function twitterSidebar(){
+   jQuery("#tweets").tweet({
+     avatar_size: 32,
+     count: 5,
++    list: true,
+     query: "example",
+-    loading_text: "searching twitter..."
++    loading_text: "searching twitter...",
++    outro_text: '<a href="http://search.twitter.com/search?q=example" style="float: right">See more tweets</a>'
+   });  
+ }
+ 
