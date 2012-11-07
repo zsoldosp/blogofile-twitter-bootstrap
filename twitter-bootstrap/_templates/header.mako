@@ -1,23 +1,34 @@
-<header>
-  <div id="header" class="header_gradient theme_font">
-    <h1><a href="${bf.util.site_path_helper()}">${bf.config.blog.name}</a></h1>
-    <h2>${bf.config.blog.description}</h2>
-  </div>
-  <div id="navigation" class="grid_12">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="${bf.util.site_path_helper()}">${bf.config.blog.name}</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              ${bf.config.blog.description}
+            </p>
 <%
 def nav_class(path):
-   render_path = bf.template_context.render_path.rsplit("/index.html")[0]
+    # TODO: refactor to create whole link here
+   render_path = bf.template_context.render_path.replace('\\', '/').rsplit("/index.html")[0]
    if render_path == path or (path == "/" and render_path == "."):
-       return "selected"
+       return "active"
    return ""
-%>
-    <ul class="theme_font">
-      <li><a href="${bf.util.site_path_helper()}"
-             class="${nav_class(bf.util.site_path_helper())}">Home</a></li>
-      <li><a href="${bf.util.site_path_helper(bf.config.blog.path)}"
-             class="${nav_class(bf.util.site_path_helper(bf.config.blog.path))}">Blog</a></li>
-      <li><a href="${bf.util.site_path_helper(bf.config.blog.path,'archive')}"
-             class="${nav_class(bf.util.site_path_helper(bf.config.blog.path,'archive'))}">Archives</a></li>
-    </ul>
-  </div>
-</header>
+%>            
+            <ul class="nav">
+      <li class="${nav_class(bf.util.site_path_helper())}">
+            <a href="${bf.util.site_path_helper()}">Home</a></li>
+      <li class="${nav_class(bf.util.site_path_helper(bf.config.blog.path))}">
+            <a href="${bf.util.site_path_helper(bf.config.blog.path)}">Blog</a></li>
+      <li class="${nav_class(bf.util.site_path_helper(bf.config.blog.path,'archive'))}">
+            <a href="${bf.util.site_path_helper(bf.config.blog.path,'archive')}">Archives</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
