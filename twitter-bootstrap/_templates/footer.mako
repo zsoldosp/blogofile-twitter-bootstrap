@@ -14,7 +14,7 @@
           ${bf.config.site.author}
         </p>
         <p>
-          Powered by <a href="http://www.blogofile.com">Blogofile</a>
+          Powered by <a href="http://www.blogofile.com">Blogofile</a> and <a href="http://twitter.github.com/bootstrap/">Bootstrap (Version 2.2.1)</a>
         </p>
         </div>
       </footer>
