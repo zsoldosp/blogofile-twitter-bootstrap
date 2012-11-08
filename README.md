@@ -2,7 +2,7 @@
 
 **It is work in progress, probably alpha release level, thus bugs are expected. Use it at your own risk**
 
-Integration between the [Blogofile][http://www.blogofile.com/] blog engine and the [Bootstrap][http://twitter.github.com/bootstrap/] cross browser template.
+Integration between the [Blogofile](http://www.blogofile.com/) blog engine and the [Bootstrap](http://twitter.github.com/bootstrap/) cross browser template.
 
 # Usage instraction
 
