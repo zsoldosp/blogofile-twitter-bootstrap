@@ -19,5 +19,9 @@
 * create reuse template for post title & categories, potentially move it to python code
 * this hero based first blog post page is kinda nice, but we may want to reserve that for only the index page and not the chronological pages, since this way the first page will not have a filled excerpts below it
 * post_excerpt.mako - is it used?
+* integrate with blogofile
+    * how can we set up a test suite for it (sample blog posts, so at least contentwise things are correctly generated)
+    * how can we ensure it will be compatible with future versions going forward?
+    * (and how do we update it with future bootstrap releases)
 ---- smells ----
 blog, disqus, tweets, etc. are scattered all over the templates. This makes it very hard to change/extend any of the templates without fully rewriting it. Would be nice to have some similar extensibility mechanism as django has it (block, block.super)
