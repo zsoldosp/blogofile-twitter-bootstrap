@@ -11,3 +11,7 @@ Integration between the [Blogofile][http://www.blogofile.com/] blog engine and t
 * it is a fully functional site, with a little twist for paraller development: instead of running blogofile XX in the root directory, you need to first copy over the files from the directory that you would like to test - blogofile-blog or twitter-bootstrap
 
     * convenience scripts `_run_blogofile-blog.sh` and `_run_twitter-bootstrap.sh` are provided to invoke the copy - build - runserver cycle for testing
+
+# Known issues
+
+Known issues are listed in the twitter-bootstrap/\_TODO.txt file
