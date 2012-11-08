@@ -10,11 +10,11 @@ ${self.head()}
 ${self.header()}
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-        ${self.sidebar()}
-        </div><!--/span-->
         <div class="span9">
             ${next.body()} 
+        </div><!--/span-->
+        <div class="span3">
+        ${self.sidebar()}
         </div><!--/span-->
       </div><!--/row-->
       <hr>
