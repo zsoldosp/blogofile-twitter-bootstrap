@@ -27,6 +27,7 @@ bf-bootstrap
 * header.mako nav_class - needed in sidebar.mako too and somewhat duplicated in blog/chronological.mako
 * duplication in chronological/archive_index in laying out the rows/cols
 * this hero based first blog post page is kinda nice, but we may want to reserve that for only the index page and not the chronological pages, since this way the first page will not have a filled excerpts below it
+* prev/next page links in mobile view overlap the navigation (guess a float:right issue) http://localhost/blog/page/1/
 other
 =====
 * image thumbnails http://twitter.github.com/bootstrap/components.html#thumbnails
