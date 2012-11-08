@@ -18,5 +18,6 @@
 * inconsistent use of post.permalink & post.permapath -  which one should be used?
 * create reuse template for post title & categories, potentially move it to python code
 * this hero based first blog post page is kinda nice, but we may want to reserve that for only the index page and not the chronological pages, since this way the first page will not have a filled excerpts below it
+* post_excerpt.mako - is it used?
 ---- smells ----
 blog, disqus, tweets, etc. are scattered all over the templates. This makes it very hard to change/extend any of the templates without fully rewriting it. Would be nice to have some similar extensibility mechanism as django has it (block, block.super)
