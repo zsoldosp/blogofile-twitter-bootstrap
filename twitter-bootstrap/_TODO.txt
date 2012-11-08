@@ -17,7 +17,7 @@ blogofile(_blog) core
     * how can we set up a test suite for it (sample blog posts, so at least contentwise things are correctly generated)
     * how can we ensure it will be compatible with future versions going forward?
     * (and how do we update it with future bootstrap releases)
-
+* ability (command switch?) to run mako._CompileContext with strict_undefined = True
 bf-bootstrap
 ============
 * add ico/* which is missing from the bootstrap thing
