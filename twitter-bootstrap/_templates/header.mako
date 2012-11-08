@@ -13,7 +13,6 @@
             </p>
 <%
 def nav_class(path):
-    # TODO: refactor to create whole link here
    render_path = bf.template_context.render_path.replace('\\', '/').rsplit("/index.html")[0]
    if render_path == path or (path == "/" and render_path == "."):
        return "active"
