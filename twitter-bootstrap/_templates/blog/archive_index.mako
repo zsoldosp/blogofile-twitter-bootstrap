@@ -3,7 +3,7 @@
     <h1>Archive</h1>
 </div>
 % for month_index, posts in enumerate(month_posts):
-    % if month_index %3 == 0:
+    % if month_index % 3 == 0:
           <div class="row-fluid">
     % endif
         <div class="well span4">
@@ -12,7 +12,7 @@
         <!--
         <li class="nav-header">${posts[0].date.strftime("%B %Y")}</li>
         --->
-        % for post_index, post in enumerate(posts):
+        % for post in posts:
             <li><a href="${post.permapath()}">${post.title}</a></li>
         % endfor
         </ul>
