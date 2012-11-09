@@ -12,19 +12,18 @@
               ${bf.config.blog.description}
             </p>
 <%
-def nav_class(path):
+def get_nav_item_html(link_text, *path_parts):
    render_path = bf.template_context.render_path.replace('\\', '/').rsplit("/index.html")[0]
+   path = bf.util.site_path_helper(*path_parts)
+   li_class = ''
    if render_path == path or (path == "/" and render_path == "."):
-       return "active"
-   return ""
+       li_class = ' class="active"'
+   return '<li%(li_class)s><a href="%(href)s">%(link_text)s</a></li>' % dict(li_class=li_class, href=path, link_text=link_text)
 %>            
             <ul class="nav">
-      <li class="${nav_class(bf.util.site_path_helper())}">
-            <a href="${bf.util.site_path_helper()}">Home</a></li>
-      <li class="${nav_class(bf.util.site_path_helper(bf.config.blog.path))}">
-            <a href="${bf.util.site_path_helper(bf.config.blog.path)}">Blog</a></li>
-      <li class="${nav_class(bf.util.site_path_helper(bf.config.blog.path,'archive'))}">
-            <a href="${bf.util.site_path_helper(bf.config.blog.path,'archive')}">Archives</a></li>
+${get_nav_item_html('Home')}
+${get_nav_item_html('Blog', bf.config.blog.path)}
+${get_nav_item_html('Archive', bf.config.blog.path, 'archive')}
             </ul>
           </div><!--/.nav-collapse -->
         </div>
