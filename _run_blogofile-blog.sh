@@ -1,2 +1,2 @@
 #!/bin/sh
-cp blogofile-blog/* . -R && blogofile build && blogofile serve 80
+./_clean.sh && cp blogofile-blog/* . -R && blogofile build && blogofile serve 80
