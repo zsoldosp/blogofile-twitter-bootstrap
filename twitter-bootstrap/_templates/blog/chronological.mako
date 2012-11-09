@@ -15,10 +15,11 @@ def posts_to_iterate(posts):
 % endif
 
 <%include file="fluid-table.mako" args="items=posts_to_iterate(posts), item_template='chronological_one_post.mako'" />
-
+<div class="span9">
 % if prev_link:
  <a class="btn pull-left" href="${prev_link}">« Previous Page</a>
 % endif
 % if next_link:
  <a class="btn pull-right" href="${next_link}">Next Page »</a>
 % endif
+</div>
