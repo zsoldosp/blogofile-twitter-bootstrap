@@ -1,40 +1,76 @@
 external
 ========
-* report feature request/patch to jquery.tweet.js https://raw.github.com/frozzare/jquery.tweet.js/master/dist/jquery.tweet.js
+* jquery.tweet.js https://raw.github.com/frozzare/jquery.tweet.js/master/dist/jquery.tweet.js - request enabling of custom templating
 
 blogofile(_blog) core
 =====================
-* minify css for each page - create css pages based on md5sum of the content of all the included css files
-* navigation (header.mako) - use links ending with / -> extra, unneeded redirect on each request - link pragprog/nygard article
-* how to disable chronological and write a full post map only with titles
-* enforce draft folder - warn if a post is draft but not in the draft folder and also warn if in the draft folder and not draft
-* warn if there is a TODO left in the post (escapable)
-* autotimestamping css/js components in the templates? configure css/js in the config? <style src="abc.css?x=<build id>">
-* how do you add custom css/javascript to a given site w/ a mako template (django.super concept)
+
+Non-minor enhancements/New features
+-----------------------------------
+
+* css optimization/automation
+
+    * minify css for each page - create css pages based on md5sum of the content of all the included css files
+    * autotimestamping css/js components in the templates? configure css/js in the config? <style src="abc.css?x=<build started timestamp/uuid>">
+    * just have a helper method that can be used in the templates - bf.helper.include_css(*css_files)
+
+* adding warnings/checks to the build pipeline
+
+    * enforce draft folder - warn if a post is draft but not in the draft folder and also warn if in the draft folder and not draft
+    * warn if there is a TODO left in the post (escapable)
+
+* create reusable widgets that can be configured/enabled in the config file, so we don't have to edit 
+  multiple templates in the default blog tempalte to change it to our liking
+
+    * examples are: tweetbox, disqus, google analytics 
+    * always included within an if widget.enabled if block
+    * enabling re-templating existing widgets (e.g.: include tweetbox in the sidebar <ul>, but also for comments maybe)
 * bring django templates to blogofile
-* consolidate tweetbox into a single component, so we could just simply enable/disable it in the config
-* same for disqus
+* enhance / reuse site settings - e.g.:
+
+    * include comments in the sidebar of the blog
+    * prefix site title with page title
+    * include custom javascript/css in a given page/template (e.g.: post)
+
+Bugfixes/minor modifications 
+----------------------------
+
+* navigation (header.mako) - use links ending with / -> extra, unneeded redirect on each request - link pragprog/nygard article
 * default blog is missing the base.css
-* if bf.config.blog.googleanlytics_id should also be included in an if statement, like disqus
-* ability to overwrite the title with current page's title - bug in old blog as well
-* get a proper title for the archive_index (the menu highlight isn't the most visible)
-* create reuse template for post title & categories, potentially move it to python code
+* blog excerpts - get rid of lxml dependency & use BeautifulSoup (easy to use on windows)
+* improve failure diagnostics
+
+    * ability (command switch?) to run mako._CompileContext with strict_undefined = True
+    * template used more than once warning - have a foo.html and a foo.html.mako, and you get a misleading error message
+
+
+Questions
+---------
+
+* how to disable chronological and write a full post map only with titles? quasi-pagemap
 * inconsistent use of post.permalink & post.permapath -  which one should be used?
-* smells - blog, disqus, tweets, etc. are scattered all over the templates. This makes it very hard to change/extend any of the templates without fully rewriting it. Would be nice to have some similar extensibility mechanism as django has it (block, block.super)
-* integrate with blogofile
-    * how can we set up a test suite for it (sample blog posts, so at least contentwise things are correctly generated)
-    * how can we ensure it will be compatible with future versions going forward?
-    * (and how do we update it with future bootstrap releases)
-* ability (command switch?) to run mako._CompileContext with strict_undefined = True
-* template used more than once - have a foo.html and a foo.html.mako, and you get a misleading error message
-bf-bootstrap
-============
+* integration with blogofile - blogofile.contrib.* & tests
+
+    * discoverability/user friendly - I personally would prefer the blogofile.contrib project being hosted together with the core
+
+        => but who is the target end user?
+
+    * testing 
+        even creating a custom blog template can be difficult 
+        ensure that all blog templates meet a minimum level
+        approval test - just diff the template against the prior one (ignore timestamps)
+    * keeping up to date with parent changes
+
+* blogofile approval tests - save last template run, and then diff against that
+
+blogofile-twitter-bootstrap
+===========================
+* get a proper title for the archive_index (the menu highlight isn't the most visible)
+* set up notifications so that we know when bootstrap is updated
 * add ico/* which is missing from the bootstrap thing
 * disable copying of twitter-bootstrap/blogofile-blog dirs to _site
 * update index.html text with regards to customization points
 * add pagination using http://twitter.github.com/bootstrap/components.html#pagination
 * should sidebar.mako's latest posts use the same 'active' for the current post?
 * this hero based first blog post page is kinda nice, but we may want to reserve that for only the index page and not the chronological pages, since this way the first page will not have a filled excerpts below it
-other
-=====
-* image thumbnails http://twitter.github.com/bootstrap/components.html#thumbnails
+* for the future - image thumbnails http://twitter.github.com/bootstrap/components.html#thumbnails
