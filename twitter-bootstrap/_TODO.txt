@@ -4,7 +4,12 @@ external
 
 blogofile(_blog) core
 =====================
-* autotimestamping css/js components in the templates? configure css/js in the config?
+* minify css for each page - create css pages based on md5sum of the content of all the included css files
+* navigation - use links ending with / -> extra, unneeded redirect on each request - link pragprog/nygard article
+* how to disable chronological and write a full post map only with titles
+* enforce draft folder - warn if a post is draft but not in the draft folder and also warn if in the draft folder and not draft
+* warn if there is a TODO left in the post (escapable)
+* autotimestamping css/js components in the templates? configure css/js in the config? <style src="abc.css?x=<build id>">
 * how do you add custom css/javascript to a given site w/ a mako template (django.super concept)
 * bring django templates to blogofile
 * consolidate tweetbox into a single component, so we could just simply enable/disable it in the config
