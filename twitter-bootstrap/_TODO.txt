@@ -5,7 +5,7 @@ external
 blogofile(_blog) core
 =====================
 * minify css for each page - create css pages based on md5sum of the content of all the included css files
-* navigation - use links ending with / -> extra, unneeded redirect on each request - link pragprog/nygard article
+* navigation (header.mako) - use links ending with / -> extra, unneeded redirect on each request - link pragprog/nygard article
 * how to disable chronological and write a full post map only with titles
 * enforce draft folder - warn if a post is draft but not in the draft folder and also warn if in the draft folder and not draft
 * warn if there is a TODO left in the post (escapable)
