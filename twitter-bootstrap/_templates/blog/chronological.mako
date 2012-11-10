@@ -2,7 +2,7 @@
 <%
 def is_first_blog_page():
    render_path = bf.template_context.render_path.replace('\\', '/').rsplit("/index.html")[0]
-   is_first = render_path in ('/blog', '/blog/page/1')
+   is_first = render_path in ('%s' % bf.config.blog.path, '%s/page/1' % bf.config.blog.path)
    return is_first
 
 def posts_to_iterate(posts):
