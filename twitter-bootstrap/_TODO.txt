@@ -35,6 +35,7 @@ Non-minor enhancements/New features
 Bugfixes/minor modifications 
 ----------------------------
 
+* inconsistent use of post.permalink & post.permapath in blogofile_blog templates -  which one should be used?
 * navigation (header.mako) - use links ending with / -> extra, unneeded redirect on each request - link pragprog/nygard article
 * default blog is missing the base.css
 * blog excerpts - get rid of lxml dependency & use BeautifulSoup (easy to use on windows)
@@ -43,12 +44,10 @@ Bugfixes/minor modifications
     * ability (command switch?) to run mako._CompileContext with strict_undefined = True
     * template used more than once warning - have a foo.html and a foo.html.mako, and you get a misleading error message
 
-
 Questions
 ---------
 
-* how to disable chronological and write a full post map only with titles? quasi-pagemap
-* inconsistent use of post.permalink & post.permapath -  which one should be used?
+* how to disable archive and write a full post map only with titles? quasi-pagemap
 * integration with blogofile - blogofile.contrib.* & tests
 
     * discoverability/user friendly - I personally would prefer the blogofile.contrib project being hosted together with the core
@@ -60,8 +59,6 @@ Questions
         ensure that all blog templates meet a minimum level
         approval test - just diff the template against the prior one (ignore timestamps)
     * keeping up to date with parent changes
-
-* blogofile approval tests - save last template run, and then diff against that
 
 blogofile-twitter-bootstrap
 ===========================
