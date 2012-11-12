@@ -1,5 +1,8 @@
 <%page args="items, item_template"/>
-<% number_of_columns = 3 %>
+<%
+    number_of_columns = 3
+    index = -1 # initialize in case len(items) == 1
+%>
 % for index, item in enumerate(items):
     % if index % number_of_columns == 0:  
         <div class="row-fluid">
