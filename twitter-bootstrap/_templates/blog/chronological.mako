@@ -6,7 +6,7 @@ def is_first_blog_page():
    return is_first
 
 def posts_to_iterate(posts):
-    return posts[1:] if is_first_blog_page() else posts
+    return posts[1:] if len(posts) != 0 and is_first_blog_page() else posts
 %>
 % if is_first_blog_page():
 <article class="hero-unit">
