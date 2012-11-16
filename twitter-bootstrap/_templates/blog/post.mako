@@ -1,4 +1,4 @@
-<%page args="post"/>
+<%page args="post, is_hero=False"/>
 
 <% 
    category_links = []
@@ -9,8 +9,11 @@
        else:
            category_links.append("<a href='%s'>%s</a>" % (category.path, category.name))
 %>
-
+% if not is_hero:
 <article>
+% else:
+<article class="hero-unit">
+% endif
   <div class="blog_post">
     <header>
       <div id="${post.slug}"></div>

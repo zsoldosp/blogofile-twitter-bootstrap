@@ -1,5 +1,5 @@
 <%inherit file="bf_base_template" />
-<%include file="post.mako" args="post=post" />
+<%include file="post.mako" args="post=post, is_hero=True" />
 % if bf.config.blog.disqus.enabled:
 <div id="disqus_thread"></div>
 <script type="text/javascript">
